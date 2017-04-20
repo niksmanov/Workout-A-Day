@@ -1,0 +1,28 @@
+{
+  "name": "workout-a-day",
+  "version": "1.0.0",
+  "description": "**Team Puca members:**",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niksmanov/Workout-A-Day.git"
+  },
+  "keywords": [
+    "js",
+    "apps",
+    "temawork"
+  ],
+  "author": "Team Puca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niksmanov/Workout-A-Day/issues"
+  },
+  "homepage": "https://github.com/niksmanov/Workout-A-Day#readme",
+  "dependencies": {
+    "systemjs": "^0.20.12",
+    "systemjs-plugin-babel": "0.0.21"
+  }
+}
