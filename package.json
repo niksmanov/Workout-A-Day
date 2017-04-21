@@ -4,7 +4,8 @@
   "description": "**Team Puca members:**",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "http-server"
   },
   "repository": {
     "type": "git",
@@ -13,16 +14,23 @@
   "keywords": [
     "js",
     "apps",
-    "temawork"
+    "teamwork"
   ],
   "author": "Team Puca",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/niksmanov/Workout-A-Day/issues"
   },
   "homepage": "https://github.com/niksmanov/Workout-A-Day#readme",
   "dependencies": {
+    "bootstrap": "^3.3.7",
+    "crypto-js": "^3.1.9-1",
+    "handlebars": "^4.0.6",
+    "jquery": "^3.2.1",
+    "jquery-ui-dist": "^1.12.1",
+    "sammy": "^0.7.6",
     "systemjs": "^0.20.12",
-    "systemjs-plugin-babel": "0.0.21"
+    "systemjs-plugin-babel": "0.0.21",
+    "toastr": "^2.1.2"
   }
 }
