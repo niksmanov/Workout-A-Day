@@ -1,7 +1,7 @@
 SystemJS.config({
     "transpiler": "plugin-babel",
     "map": {
-        //SystemJS files\\
+        //SystemJS files\\ 
         "plugin-babel": "../node-modules/systemjs-plugin-babel/plugin-babel.js",
         "systemjs-babel-build": "../node-modules/systemjs-plugin-babel/systemjs-babel-browser.js",
         
