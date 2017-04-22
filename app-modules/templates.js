@@ -1,20 +1,19 @@
-let templates = (function () {
+import 'jquery';
 
-    let handlebars = window.Handlebars;
-
-    function get(name) {
-        return new Promise((resolve, reject) => {
-            let url = `templates/${name}.handlebars`;
-            $.get(url, function (html) {
-                let template = handlebars.compile(html);
-                resolve(template);
-            })
+const templates = (function () {
+    function getPage(pageName, data) {
+        const url = `templates/${pageName}.handlebars`;
+        $.get(url, function (html) {
+            const hbTemplate = Handlebars.compile(html.toString());
+            $('#content').html(hbTemplate(data));
         });
     }
 
     return {
-        get: get
+        getPage: getPage
     };
 }());
 
-export {templates};
+export {
+    templates
+};
