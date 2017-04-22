@@ -2,25 +2,26 @@ SystemJS.config({
     "transpiler": "plugin-babel",
     "map": {
         //SystemJS files\\
-        "plugin-balel": "./node_modules/systemjs-plugin-babel/plugin-babel.js",
-        "systemjs-babel-build": "./node_modules/systemjs-plugin-babel/systemjs-babel-browser.js",
+        "plugin-babel": "../node_modules/systemjs-plugin-babel/plugin-babel.js",
+        "systemjs-babel-build": "../node_modules/systemjs-plugin-babel/systemjs-babel-browser.js",
         
         //App files\\
-        "index": "./app-modules/index.js",
+        "index": "../app-modules/index.js",
+        "templates": "../app-modules/templates.js",
 
         //Libraries\\
-        "jquery" : "./node_modules/jquery/dist/jquery.js",
+        "jquery" : "../node_modules/jquery/dist/jquery.js",
         //Routing:
-        "sammy" : "./node_modules/sammy/lib/sammy.js",
+        "sammy" : "../node_modules/sammy/lib/sammy.js",
         //HTML:
-        "handlebars": "./node_modules/handlebars/lib/handlebars.js",
+        "handlebars": "../node_modules/handlebars/dist/handlebars.js",
         //Crypt passwords:
-        "crypto" : "./node_modules/crypto-js/crypto-js.js",
+        "crypto" : "../node_modules/crypto-js/crypto-js.js",
         //Popup messages
-        "toastr" : "./node_modules/toastr/toastr.js",
+        "toastr" : "../node_modules/toastr/toastr.js",
         //UI stuffs (autocomplete, calendar etc.)
-        "jqueryUi": "./node_modules/jquery-ui-dist/jquery-ui.js"
+        "jqueryUi": "../node_modules/jquery-ui-dist/jquery-ui.js"
     }
 });
 
-SystemJS.import('index');
+// SystemJS.import('index');
