@@ -20,7 +20,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     $('#loginBtn').addClass('hidden');
     $('#registerBtn').addClass('hidden');
-    $('#currentUser').removeClass('hidden').html(`Hi, ${currentUser.email}`);
+    $('#currentUser').removeClass('hidden').html(`Hi, ${currentUser.displayName}`);
     $('#logoutBtn').removeClass('hidden');
     // ...
   } else {
