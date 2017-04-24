@@ -1,6 +1,7 @@
 import 'jquery';
 import { templates } from 'templates';
 import { registerController } from 'registerController';
+import { loginController } from 'loginController';
 
 let currentUser = {};
 
@@ -28,7 +29,7 @@ const router = new Navigo(null, false, '#!');
 router
     .on('/register', () => registerController())
     .on('/home', () => templates.getPage('home', {}))
-    .on('/login', () => templates.getPage('login', {}))
+    .on('/login', () => loginController())
     .on('/gallery', () => templates.getPage('gallery', {}))
     .on('/trainings', () => templates.getPage('trainings', {}))
     .on('/videos', () => templates.getPage('videos', {}))
