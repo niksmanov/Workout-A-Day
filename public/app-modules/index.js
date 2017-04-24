@@ -1,11 +1,32 @@
-import { templates } from 'templates';
 import 'jquery';
+import { templates } from 'templates';
+import { registerController } from 'registerController';
 
+let currentUser = {};
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    currentUser  = {
+        'displayName': user.displayName,
+        'email': user.email,
+        'emailVerified': user.emailVerified,
+        'photoURL': user.photoURL,
+        'isAnonymous': user.isAnonymous,
+        'uid': user.uid,
+        'providerData': user.providerData
+    }
+    // ...
+  } else {
+    // User is signed out.
+    // ...
+  }
+});
 
 const router = new Navigo(null, false, '#!');
 
 router
-    .on('/register', () => templates.getPage('register', {}))
+    .on('/register', () => registerController())
     .on('/home', () => templates.getPage('home', {}))
     .on('/login', () => templates.getPage('login', {}))
     .on('/gallery', () => templates.getPage('gallery', {}))
