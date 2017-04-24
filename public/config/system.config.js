@@ -9,6 +9,7 @@ SystemJS.config({
         "index": "../app-modules/index.js",
         "templates": "../app-modules/templates.js",
         "registerController": "../controllers/registerController.js",
+        "loginController": "../controllers/loginController.js",
 
         //Libraries\\
         "jquery" : "../node-modules/jquery/dist/jquery.js",
