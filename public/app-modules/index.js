@@ -2,13 +2,17 @@ import { templates } from 'templates';
 import 'jquery';
 
 
-$('#loginBtn').on('click', () => templates.getPage('login', {}));
-$('#registerBtn').on('click', () => templates.getPage('register', {}));
-$('#homeBtn').on('click', () => templates.getPage('home', {}));
-$('#galleryBtn').on('click', () => templates.getPage('gallery', {}));
-$('#trainingsBtn').on('click', () => templates.getPage('trainings', {}));
-$('#videosBtn').on('click', () => templates.getPage('videos', {}));
+const router = new Navigo(null, false, '#!');
 
+router
+    .on('/register', () => templates.getPage('register', {}))
+    .on('/home', () => templates.getPage('home', {}))
+    .on('/login', () => templates.getPage('login', {}))
+    .on('/gallery', () => templates.getPage('gallery', {}))
+    .on('/trainings', () => templates.getPage('trainings', {}))
+    .on('/videos', () => templates.getPage('videos', {}))
+    .notFound(() => templates.getPage('notFound',{}))
+    .resolve();
 
 // const ref = firebase.database().ref();
 
