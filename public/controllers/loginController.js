@@ -22,7 +22,7 @@ const loginController = function (user) {
                 user.then((usr) => {
                     $('#loginBtn').addClass('hidden');
                     $('#registerBtn').addClass('hidden');
-                    $('#currentUser').removeClass('hidden').html(`Hi, ${usr.displayName}`);
+                    $('#currentUser').removeClass('hidden').text(`Hello, ${usr.displayName}`);
                     $('#logoutBtn').removeClass('hidden');
                     toastr.success(`You have successfully logged in as ${usr.displayName}`);
                     location.hash = '/home';
@@ -32,6 +32,6 @@ const loginController = function (user) {
             }  
         });
     });
-}
+};
 
 export { loginController };

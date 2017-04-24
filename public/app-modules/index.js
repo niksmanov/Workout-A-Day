@@ -16,11 +16,11 @@ firebase.auth().onAuthStateChanged(function(user) {
         'isAnonymous': user.isAnonymous,
         'uid': user.uid,
         'providerData': user.providerData
-    }
+    };
 
     $('#loginBtn').addClass('hidden');
     $('#registerBtn').addClass('hidden');
-    $('#currentUser').removeClass('hidden').html(`Hi, ${currentUser.displayName}`);
+    $('#currentUser').removeClass('hidden').text(`Hello, ${currentUser.displayName}`);
     $('#logoutBtn').removeClass('hidden');
     // ...
   } else {
@@ -32,10 +32,12 @@ firebase.auth().onAuthStateChanged(function(user) {
 const router = new Navigo(null, false, '#!');
 
 router
-    .on('/register', () => registerController())
+    .on('/', () => templates.getPage('home', {}))
     .on('/home', () => templates.getPage('home', {}))
+    .on('/register', () => registerController())
     .on('/login', () => loginController())
     .on('/logout', () => logoutController())
+    .on('/user', () => templates.getPage('user', {}))
     .on('/gallery', () => templates.getPage('gallery', {}))
     .on('/trainings', () => templates.getPage('trainings', {}))
     .on('/videos', () => templates.getPage('videos', {}))

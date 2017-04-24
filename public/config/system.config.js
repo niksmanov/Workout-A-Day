@@ -14,12 +14,9 @@ SystemJS.config({
         //Libraries\\
         "jquery" : "../node-modules/jquery/dist/jquery.js",
         //Routing:
-        "sammy" : "../node-modules/sammy/lib/sammy.js",
         "navigo": "../node-modules/navigo/lib/navigo.min.js",
         //HTML:
         "handlebars": "../node-modules/handlebars/dist/handlebars.js",
-        //Crypt passwords:
-        "crypto" : "../node-modules/crypto-js/crypto-js.js",
         //Popup messages
         "toastr" : "../node-modules/toastr/toastr.js",
         //UI stuffs (autocomplete, calendar etc.)

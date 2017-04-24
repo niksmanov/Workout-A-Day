@@ -32,6 +32,6 @@ const registerController = function () {
             }  
         });
     });
-}
+};
 
 export { registerController };

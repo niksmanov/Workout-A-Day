@@ -1,3 +1,7 @@
 .hidden {
     display: none;
 }
+
+#currentUser {
+    font-weight: bold;
+}
