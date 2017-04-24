@@ -17,6 +17,11 @@ firebase.auth().onAuthStateChanged(function(user) {
         'uid': user.uid,
         'providerData': user.providerData
     }
+
+    $('#loginBtn').addClass('hidden');
+    $('#registerBtn').addClass('hidden');
+    $('#currentUser').removeClass('hidden').html(`Hi, ${currentUser.email}`);
+    $('#logoutBtn').removeClass('hidden');
     // ...
   } else {
     // User is signed out.
