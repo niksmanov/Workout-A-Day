@@ -13,6 +13,7 @@ SystemJS.config({
         "jquery" : "../node-modules/jquery/dist/jquery.js",
         //Routing:
         "sammy" : "../node-modules/sammy/lib/sammy.js",
+        "navigo": "../node-modules/navigo/lib/navigo.min.js",
         //HTML:
         "handlebars": "../node-modules/handlebars/dist/handlebars.js",
         //Crypt passwords:
