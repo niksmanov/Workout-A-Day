@@ -35,6 +35,7 @@ router
     .on('/register', () => registerController())
     .on('/home', () => templates.getPage('home', {}))
     .on('/login', () => loginController())
+    .on('/logout', () => logoutController())
     .on('/gallery', () => templates.getPage('gallery', {}))
     .on('/trainings', () => templates.getPage('trainings', {}))
     .on('/videos', () => templates.getPage('videos', {}))
