@@ -21,8 +21,11 @@ const registerController = function () {
                     });
 
                 user.then((usr) => {
-                    toastr.success(`You have successfully registered as ${$username.val()}`);
-                    location.hash = '/home';
+                    user.updateProfile({ displayName: $username.val()})
+                        .then(() => {
+                            toastr.success(`You have successfully registered as ${$username.val()}`);
+                            location.hash = '/home';
+                        });
                 });
             } else {
                 toastr.error('fill in all fields');
