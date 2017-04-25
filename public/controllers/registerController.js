@@ -21,7 +21,7 @@ const registerController = function () {
                     });
 
                 user.then((usr) => {
-                    user.updateProfile({ displayName: $username.val()})
+                    firebase.auth().currentUser.updateProfile({ displayName: $username.val()})
                         .then(() => {
                             toastr.success(`You have successfully registered as ${$username.val()}`);
                             location.hash = '/home';
