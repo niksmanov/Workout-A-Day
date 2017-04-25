@@ -25,6 +25,7 @@ const registerController = function () {
                         .then(() => {
                             toastr.success(`You have successfully registered as ${$username.val()}`);
                             location.hash = '/home';
+                            location.reload();
                         });
                 });
             } else {
