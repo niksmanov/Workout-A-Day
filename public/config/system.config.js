@@ -11,6 +11,7 @@ SystemJS.config({
         "registerController": "../controllers/registerController.js",
         "loginController": "../controllers/loginController.js",
         "logoutController": "../controllers/logoutController.js",
+        "userController": "../controllers/userController.js",
 
         //Libraries\\
         "jquery" : "../node-modules/jquery/dist/jquery.js",
