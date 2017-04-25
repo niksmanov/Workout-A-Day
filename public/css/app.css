@@ -5,3 +5,7 @@
 #currentUser {
     font-weight: bold;
 }
+
+#registerBtn, #logoutBtn{
+    right: 15%;
+}
