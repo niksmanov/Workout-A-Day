@@ -2,6 +2,7 @@ import 'jquery';
 import { templates } from 'templates';
 import { registerController } from 'registerController';
 import { loginController } from 'loginController';
+import { logoutController } from 'logoutController';
 
 let currentUser = {};
 
@@ -21,7 +22,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     $('#loginBtn').addClass('hidden');
     $('#registerBtn').addClass('hidden');
     $('#currentUser').removeClass('hidden').text(`Hello, ${currentUser.displayName}`);
-    $('#logoutBtn').removeClass('hidden');
+    $('#logoutBtn').removeClass('hidden').on('click', () => logoutController(currentUser));
     // ...
   } else {
     // User is signed out.
