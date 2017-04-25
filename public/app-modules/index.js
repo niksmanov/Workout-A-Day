@@ -5,6 +5,8 @@ import {loginController} from 'loginController';
 import {logoutController} from 'logoutController';
 import {userController} from 'userController';
 import {homeController} from 'homeController';
+import {changePasswordController} from 'changePasswordController';
+import {editProfileController} from 'editProfileController';
 
 let currentlyLoggedUser = firebase.auth().currentUser;
 
@@ -31,7 +33,9 @@ router
         '/register': () => registerController(),
         '/login': () => loginController(),
         '/logout': () => logoutController(),
-        '/user': () => userController(currentlyLoggedUser),
+        '/user': () => userController(currentlyLoggedUser),        
+        '/changePassword': () => changePasswordController(currentlyLoggedUser),
+        '/editProfile': () => editProfileController(currentlyLoggedUser),
         '/gallery': () => templates.getPage('gallery', {}),
         '/trainings': () => templates.getPage('trainings', {}),
         '/videos': () => templates.getPage('videos', {})
