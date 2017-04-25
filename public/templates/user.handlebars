@@ -1,5 +1,5 @@
 <fieldset>
-    <legend align="center">User</legend>
+    <legend align="center">User profile of {{displayName}}</legend>
     <img src="{{photoURL}}" alt="{{displayName}}" class="img-thumbnail">
     <form class="form-horizontal container">
         <div class="row">
@@ -13,16 +13,8 @@
                     <p class="form-control-static">{{email}}</p>
                 </div>
             </div>
-            <div class="form-group hidden">
-                <label for="currentPassword" class="col-sm-2 control-label">Current password</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="currentPassword" placeholder="Current password" />
-                </div>
-                <label for="newPassword" class="col-sm-2 control-label">New password</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="newPassword" placeholder="New password" />
-                </div>
-            </div>
+            <a class="btn" id="editProfileBtn">Edit profile</a>
+            <a class="btn" id="changePasswordBtn">Change password</a>
         </div>
     </form>
 </fieldset>
