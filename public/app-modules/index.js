@@ -5,25 +5,15 @@ import { loginController } from 'loginController';
 import { logoutController } from 'logoutController';
 import { userController } from 'userController';
 
-let currentUser = {};
+let currentlyLoggedUser = firebase.auth().currentUser;
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    currentUser  = {
-        'displayName': user.displayName,
-        'email': user.email,
-        'emailVerified': user.emailVerified,
-        'photoURL': user.photoURL,
-        'isAnonymous': user.isAnonymous,
-        'uid': user.uid,
-        'providerData': user.providerData
-    };
-
     $('#loginBtn').addClass('hidden');
     $('#registerBtn').addClass('hidden');
-    $('#currentUser').removeClass('hidden').text(`Hello, ${currentUser.displayName}`);
-    $('#logoutBtn').removeClass('hidden').on('click', () => logoutController(currentUser));
+    $('#currentUser').removeClass('hidden').text(`Hello, ${currentlyLoggedUser.displayName}`);
+    $('#logoutBtn').removeClass('hidden').on('click', () => logoutController(currentlyLoggedUser));
     // ...
   } else {
     // User is signed out.
@@ -34,15 +24,17 @@ firebase.auth().onAuthStateChanged(function(user) {
 const router = new Navigo(null, false, '#!');
 
 router
-    .on('/', () => templates.getPage('home', {}))
-    .on('/home', () => templates.getPage('home', {}))
-    .on('/register', () => registerController())
-    .on('/login', () => loginController())
-    .on('/logout', () => logoutController())
-    .on('/user', () => userController(currentUser))
-    .on('/gallery', () => templates.getPage('gallery', {}))
-    .on('/trainings', () => templates.getPage('trainings', {}))
-    .on('/videos', () => templates.getPage('videos', {}))
+    .on(() => templates.getPage('home', {}))
+    .on({
+      '/home': () => templates.getPage('home', {}),
+      '/register': () => registerController(),
+      '/login': () => loginController(),
+      '/logout': () => logoutController(),
+      '/user': () => userController(currentlyLoggedUser),
+      '/gallery': () => templates.getPage('gallery', {}),
+      '/trainings': () => templates.getPage('trainings', {}),
+      '/videos': () => templates.getPage('videos', {})
+    })
     .notFound(() => templates.getPage('notFound',{}))
     .resolve();
 
