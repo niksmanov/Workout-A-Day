@@ -9,3 +9,23 @@
 #registerBtn, #logoutBtn{
     right: 15%;
 }
+
+
+/* VIDEOS SECTION */
+.beginner {
+    background-color: rgba(46, 167, 44, 0.4);
+}
+
+.intermediate {
+    background-color: rgba(203, 204, 0, 0.4);
+}
+
+.advanced {
+    background-color: rgba(203, 0, 0, 0.4);
+}
+
+fieldset iframe {
+    width: 300px;
+    height: 480px;
+}
+/* END OF VIDEOS SECTION */
