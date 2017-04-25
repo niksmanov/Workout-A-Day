@@ -3,6 +3,7 @@ import { templates } from 'templates';
 import { registerController } from 'registerController';
 import { loginController } from 'loginController';
 import { logoutController } from 'logoutController';
+import { userController } from 'userController';
 
 let currentUser = {};
 
@@ -38,7 +39,7 @@ router
     .on('/register', () => registerController())
     .on('/login', () => loginController())
     .on('/logout', () => logoutController())
-    .on('/user', () => templates.getPage('user', {}))
+    .on('/user', () => userController(currentUser))
     .on('/gallery', () => templates.getPage('gallery', {}))
     .on('/trainings', () => templates.getPage('trainings', {}))
     .on('/videos', () => templates.getPage('videos', {}))
