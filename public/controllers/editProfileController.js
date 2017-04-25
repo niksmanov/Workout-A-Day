@@ -3,7 +3,7 @@ import { templates } from 'templates';
 const editProfileController = function (user) {
     templates.getPage('editProfile', user)
         .done(() => {
-            const $editeBtn = $('#editBtn');
+            const $editBtn = $('#editBtn');
             const $email = $('#emailChangeInput');
             const $username = $('#usernameChangeInput');
 
