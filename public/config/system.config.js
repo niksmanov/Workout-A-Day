@@ -12,6 +12,7 @@ SystemJS.config({
         "loginController": "../controllers/loginController.js",
         "logoutController": "../controllers/logoutController.js",
         "userController": "../controllers/userController.js",
+        "homeController": "../controllers/homeController.js",
 
         //Libraries\\
         "jquery" : "../node-modules/jquery/dist/jquery.js",
@@ -22,7 +23,9 @@ SystemJS.config({
         //Popup messages
         "toastr" : "../node-modules/toastr/toastr.js",
         //UI stuffs (autocomplete, calendar etc.)
-        "jqueryUi": "../node-modules/jquery-ui-dist/jquery-ui.js"
+        "jqueryUi": "../node-modules/jquery-ui-dist/jquery-ui.js",
+        "bootstrap": "node-modules/bootstrap/dist/js/bootstrap.min.js"
+
     }
 });
 
