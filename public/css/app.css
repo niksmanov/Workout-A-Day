@@ -6,26 +6,37 @@
     font-weight: bold;
 }
 
-#registerBtn, #logoutBtn{
+#registerBtn, #logoutBtn {
     right: 15%;
 }
 
+/* GALLERY SECTION */
+.hide-bullets {
+    list-style: none;
+    margin-left: -40px;
+    margin-top: 20px;
+}
+
+.thumbnail {
+    padding: 0;
+}
+/* END OF GALLERY SECTION */
 
 /* VIDEOS SECTION */
-.beginner {
-    background-color: rgba(46, 167, 44, 0.4);
+.beginner > iframe {
+    border: 5px solid rgba(46, 167, 44, 0.4);
 }
 
-.intermediate {
-    background-color: rgba(203, 204, 0, 0.4);
+.intermediate > iframe {
+    border: 5px solid rgba(203, 204, 0, 0.4);
 }
 
-.advanced {
-    background-color: rgba(203, 0, 0, 0.4);
+.advanced > iframe {
+    border: 5px solid rgba(203, 0, 0, 0.4);
 }
 
 fieldset iframe {
-    width: 377px;
-    height: 480px;
+width: 33%;
+height: 400px;
 }
 /* END OF VIDEOS SECTION */

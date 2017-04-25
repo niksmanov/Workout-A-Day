@@ -13,6 +13,7 @@ SystemJS.config({
         "logoutController": "../controllers/logoutController.js",
         "userController": "../controllers/userController.js",
         "homeController": "../controllers/homeController.js",
+        "galleryController": "../controllers/galleryController.js",
         "editProfileController": "../controllers/editProfileController.js",
         "changePasswordController": "../controllers/changePasswordController.js",
 
