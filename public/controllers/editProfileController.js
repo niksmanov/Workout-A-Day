@@ -23,7 +23,7 @@ const editProfileController = function (user) {
 
                 if (email.trim !== '' && email !== user.email) {
                     if (password.trim() === '') {
-                        toatr.error('Please enter your password!');
+                        toastr.error('Please enter your password!');
                     } else {
                         const credential = firebase.auth.EmailAuthProvider.credential(user.email, password);
                         const currentUser = firebase.auth().currentUser;
