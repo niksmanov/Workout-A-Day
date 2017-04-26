@@ -29,7 +29,7 @@ const registerController = function () {
                         });
                 });
             } else {
-                toastr.error('fill in all fields');
+                toastr.error('Fill all the fields!');
             }  
         });
     });
