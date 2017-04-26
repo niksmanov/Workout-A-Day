@@ -1,7 +1,7 @@
 <fieldset>
     <legend align="center">{{displayName}}'s profile</legend>
     <div class="col-sm-2">
-        <img src="{{photoURL}}" alt="{{displayName}}" class="img-thumbnail">
+        <img src="{{photoURL}}" alt="{{displayName}}" class="img-thumbnail img-responsive">
     </div>
     <div class="col-sm-10">
         <form class="form-horizontal">
@@ -17,10 +17,10 @@
                     <p class="form-control-static">{{email}}</p>
                 </div>
             </div>
-    </div>
-    <a href="#/editProfile" class="btn btn-default clearfix col-sm-offset-2" id="editProfileBtn">Edit profile</a>
-    <a href="#/changePassword" class="btn btn-default clearfix" id="changePasswordBtn">Change password</a>
-    </div>
-    </form>
+            <div class="form-group col-sm-12 col-sm-offset-2">
+                <a href="#/editProfile" class="btn btn-default clearfix col-sm-offset-2" id="editProfileBtn">Edit profile</a>
+                <a href="#/changePassword" class="btn btn-default clearfix" id="changePasswordBtn">Change password</a>
+            </div>
+        </form>
     </div>
 </fieldset>
