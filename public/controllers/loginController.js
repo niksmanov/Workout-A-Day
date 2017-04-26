@@ -10,23 +10,22 @@ const loginController = function (user) {
 
         $loginBtn.on('click', () => {
             if($email.val() && $pass.val()){
+                const user = Promise.resolve(firebase.auth().signInWithEmailAndPassword($email.val(), $pass.val()));
+                   
+                user
+                    .then((usr) => {
+                        $('#loginBtn').addClass('hidden');
+                        $('#registerBtn').addClass('hidden');
+                        $('#currentUser').removeClass('hidden').text(`Hello, ${usr.displayName}`);
+                        $('#logoutBtn').removeClass('hidden');
 
-                const user = firebase.auth().signInWithEmailAndPassword($email.val(), $pass.val())
-                    .catch(function(error) {
-                        const errorCode = error.code;
-                        const errorMessage = error.message;
-                        toastr.error(`There was an error: ${errorCode} - ${errorMessage}
+                        toastr.success(`You have successfully logged in as ${usr.displayName}`);
+                        location.hash = '/home';                    
+                    }, 
+                    function(error) {
+                        toastr.error(`There was an error: ${error.message}
                         Please try again.`);
                     });
-
-                user.then((usr) => {
-                    $('#loginBtn').addClass('hidden');
-                    $('#registerBtn').addClass('hidden');
-                    $('#currentUser').removeClass('hidden').text(`Hello, ${usr.displayName}`);
-                    $('#logoutBtn').removeClass('hidden');
-                    toastr.success(`You have successfully logged in as ${usr.displayName}`);
-                    location.hash = '/home';
-                });
             } else {
                 toastr.error('Fill all the fields!');
             }  
