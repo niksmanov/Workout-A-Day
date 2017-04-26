@@ -10,6 +10,12 @@
     right: 15%;
 }
 
+.img-thumbnail {
+    float: left;
+    width: 140px;
+    height: 186.7px;
+}
+
 /* GALLERY SECTION */
 .hide-bullets {
     list-style: none;
