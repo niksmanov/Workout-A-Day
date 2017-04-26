@@ -28,7 +28,7 @@ const loginController = function (user) {
                     location.hash = '/home';
                 });
             } else {
-                toastr.error('fill in all fields');
+                toastr.error('Fill all the fields!');
             }  
         });
     });
