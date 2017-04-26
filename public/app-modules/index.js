@@ -14,6 +14,8 @@ let currentlyLoggedUser = firebase.auth().currentUser;
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         // User is signed in.
+        currentlyLoggedUser = user;
+
         $('#loginBtn').addClass('hidden');
         $('#registerBtn').addClass('hidden');
         $('#currentUser').removeClass('hidden').text(`Hello, ${currentlyLoggedUser.displayName}`);
