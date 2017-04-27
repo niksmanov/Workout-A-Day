@@ -1,6 +1,25 @@
 <fieldset>
     <legend align="center">Trainings</legend>
-    <h3>Here we must add some trainings :)</h3>
-    <p>http://bootsnipp.com/snippets/featured/portfolio-gallery-with-filtering-category</p>
-    <p>http://darebee.com/workouts.html</p>
+    <!--Array of trainings-->
+    {{#this}}
+        <div class="col-xs-5 col-sm-6 col-lg-4">
+            <h3 align="center">{{trainingName}}</h3>
+            <div class="list-group">
+                {{#exercises}}
+                    <a class="list-group-item" data-toggle="modal" data-target="#myModal" data-imgsrc="{{imgSrc}}">
+                        {{title}} : {{description}}
+                    </a>
+                {{/exercises}}
+            </div>
+        </div>
+    {{/this}}
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" align="center">
+                    <img src="" class="img-responsive" id="currentImage">
+                </div>
+            </div>
+        </div>
+    </div>
 </fieldset>

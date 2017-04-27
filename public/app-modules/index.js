@@ -6,6 +6,7 @@ import {logoutController} from 'logoutController';
 import {userController} from 'userController';
 import {homeController} from 'homeController';
 import {galleryController} from 'galleryController';
+import {trainingsController} from 'trainingsController';
 import {changePasswordController} from 'changePasswordController';
 import {editProfileController} from 'editProfileController';
 
@@ -40,7 +41,7 @@ router
         '/changePassword': () => changePasswordController(currentlyLoggedUser),
         '/editProfile': () => editProfileController(currentlyLoggedUser),
         '/gallery': () => galleryController(),
-        '/trainings': () => templates.getPage('trainings', {}),
+        '/trainings': () => trainingsController(),
         '/videos': () => templates.getPage('videos', {})
     })
     .notFound(() => templates.getPage('notFound', {}))

@@ -14,6 +14,7 @@ SystemJS.config({
         "userController": "../controllers/userController.js",
         "homeController": "../controllers/homeController.js",
         "galleryController": "../controllers/galleryController.js",
+        "trainingsController": "../controllers/trainingsController.js",
         "editProfileController": "../controllers/editProfileController.js",
         "changePasswordController": "../controllers/changePasswordController.js",
 
