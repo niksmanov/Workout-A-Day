@@ -6,10 +6,6 @@
     font-weight: bold;
 }
 
-#registerBtn, #logoutBtn {
-    right: 15%;
-}
-
 .img-thumbnail {
     float: left;
     width: 140px;

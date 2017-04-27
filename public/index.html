@@ -34,31 +34,42 @@
 </head>
 <body>
 
-
 <div id="root" class="container">
     <header>
-        <div class="navbar navbar-default">
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="#/home" id="homeBtn">Home</a></li>
-                <li><a href="#/gallery" id="galleryBtn">Gallery</a></li>
-                <li><a href="#/trainings" id="trainingsBtn">Trainings</a></li>
-                <li><a href="#/videos" id="videosBtn">Workout Videos</a></li>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"><strong>Workout A Day</strong></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#/home" id="homeBtn">Home</a></li>
+                    <li><a href="#/gallery" id="galleryBtn">Gallery</a></li>
+                    <li><a href="#/trainings" id="trainingsBtn">Trainings</a></li>
+                    <li><a href="#/videos" id="videosBtn">Workout Videos</a></li>
 
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/user" id="currentUser" class="hidden"></a></li>
-                <li><a href="#/home" id="logoutBtn" class="hidden"><strong>Log out</strong></a></li>
-                <li><a href="#/login" id="loginBtn"><strong>Log in</strong></a></li>
-                <li><a href="#/register" id="registerBtn"><strong>Register</strong></a></li>
-            </ul>
-        </div>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/user" id="currentUser" class="hidden"></a></li>
+                    <li><a href="#/home" id="logoutBtn" class="hidden"><strong>Log out</strong></a></li>
+                    <li><a href="#/login" id="loginBtn"><strong>Log in</strong></a></li>
+                    <li><a href="#/register" id="registerBtn"><strong>Register</strong></a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <div id="content">
     </div>
     <footer class="text-center navbar-fixed-bottom">
-            <a href="https://github.com/niksmanov/Workout-A-Day">
-                <strong>Team Puca Project</strong>
-            </a>
+        <a href="https://github.com/niksmanov/Workout-A-Day">
+            <strong>Team Puca Project</strong>
+        </a>
     </footer>
 </div>
 
