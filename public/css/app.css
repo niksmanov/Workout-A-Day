@@ -25,20 +25,15 @@
 /* END OF GALLERY SECTION */
 
 /* VIDEOS SECTION */
-.beginner > iframe {
+.beginner > .col-sm-4 > iframe {
     border: 5px solid rgba(46, 167, 44, 0.4);
 }
 
-.intermediate > iframe {
+.intermediate > .col-sm-4 > iframe {
     border: 5px solid rgba(203, 204, 0, 0.4);
 }
 
-.advanced > iframe {
+.advanced > .col-sm-4 > iframe {
     border: 5px solid rgba(203, 0, 0, 0.4);
-}
-
-fieldset iframe {
-width: 33%;
-height: 400px;
 }
 /* END OF VIDEOS SECTION */
