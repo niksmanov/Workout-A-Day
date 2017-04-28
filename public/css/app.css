@@ -8,8 +8,10 @@
 
 .img-thumbnail {
     float: left;
+    max-width: 100%;
+    max-height: 100%;
     width: 140px;
-    height: 186.7px;
+    height: auto;
 }
 
 /* GALLERY SECTION */
