@@ -3,12 +3,15 @@
     <!--Array of trainings-->
     {{#this}}
         <div class="col-sm-4">
-            <h3 align="center">{{trainingName}}</h3>
+            <h3 align="center" class="trainingName">{{trainingName}}</h3>
             <div class="list-group">
                 {{#exercises}}
-                    <a class="list-group-item" data-toggle="modal" data-target="#myModal" data-imgsrc="{{imgSrc}}">
-                        {{title}} : {{description}}
-                    </a>
+                    <div class="list-group-item" data-index="{{@index}}">
+                        <div class="workout" data-toggle="modal" data-target="#myModal" data-imgsrc="{{imgSrc}}">
+                            <span data-workoutname="{{title}}">{{title}} : {{description}}</span>
+                        </div>
+                        <img class="star hidden" src="../images/icons/likeOff.png">
+                    </div>
                 {{/exercises}}
             </div>
         </div>

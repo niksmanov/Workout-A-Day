@@ -26,6 +26,17 @@
 }
 /* END OF GALLERY SECTION */
 
+/* TRAININGS SECTION */
+.star {
+    width: 22px;
+    height: 22px;
+    position: relative;
+    top: -22px;
+    float: right;
+}
+
+/* END OF TRAININGS SECTION */
+
 /* VIDEOS SECTION */
 .beginner > .col-sm-4 > iframe {
     border: 5px solid rgba(46, 167, 44, 0.4);
