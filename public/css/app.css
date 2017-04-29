@@ -14,6 +14,21 @@
     height: auto;
 }
 
+/* PROFILE SECTION */
+#userLikes > .list-group-item {
+    height: 200px;
+    max-width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+#userLikes > .list-group-item > a {
+    color: black;
+    line-height: 250%;
+}
+/* END OF PROFILE SECTION */
+
 /* GALLERY SECTION */
 .hide-bullets {
     list-style: none;

@@ -43,7 +43,7 @@ router
         '/editProfile': () => editProfileController(currentlyLoggedUser),
         '/gallery': () => galleryController(),
         '/trainings': () => trainingsController(),
-        '/videos': () => videosController(),
+        '/videos': () => videosController()
     })
     .notFound(() => templates.getPage('notFound', {}))
     .resolve();
@@ -55,5 +55,3 @@ router
 // }, function (error) {
 //     console.log("Error: " + error.code);
 // });
-
-module.exports = router;

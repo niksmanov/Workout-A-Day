@@ -1,11 +1,10 @@
 import {templates} from 'templates';
-const trainingsController = function () {
+let trainingsController = function () {
 
     const trainingsRef = firebase.database().ref('Trainings/');
     let childArray = [];
     let imageId = 0;
     let allTrainingsLikes = [];
-    let usersLikedTrainings = [];
 
     trainingsRef.once('value', function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
@@ -51,17 +50,20 @@ const trainingsController = function () {
 
                 firebase.auth().onAuthStateChanged(function (user) {
                     if (user) {
-                        let $allLikeButtons = $('.star');
 
+                        let $allLikeButtons = $('.star');
+                        let storage = "";
                         //Check if user is likes some trainings to update like button
                         for (let i = 0; i < allTrainingsLikes.length; i += 1) {
                             for (let j = 0; j < allTrainingsLikes[i].usersLikes.length; j += 1) {
                                 if (user.displayName === allTrainingsLikes[i].usersLikes[j]) {
                                     $($allLikeButtons[i]).attr('src', '../images/icons/likeOn.png');
+                                    //Add user liked trainings
+                                    storage += `"${allTrainingsLikes[i].trainingName} training" from ${allTrainingsLikes[i].workout} program,`;
                                 }
                             }
                         }
-
+                        localStorage.setItem('userLikes', storage); //save user favourites trainings (for user profile)
 
                         //Upload users favourites training in firebase
                         $allLikeButtons.removeClass('hidden');
@@ -101,9 +103,6 @@ const trainingsController = function () {
 
                                 //Add currentUser like to likes of current training
                                 currentTrainingUsersLike += `${user.displayName},`;
-
-                                let likedTraining = `"${trainingName} training" from ${workoutName} program`;
-                                usersLikedTrainings.push(likedTraining);
                                 toastr.success(`You add "${trainingName} training" from ${workoutName} program in your favourites list!`);
                             }
                         });
