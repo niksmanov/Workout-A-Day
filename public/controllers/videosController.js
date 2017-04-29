@@ -18,7 +18,6 @@ const videosController = function () {
 
             $upload.click(() => {
                 const vidUrl = $('#video-url').val();
-                alert(vidUrl)
                 var matches = vidUrl.match(/watch\?v=([a-zA-Z0-9\-_]+)/); //URL Validator
                 if (matches && firebase.auth().currentUser !== null) {
                     const iFrame = $(`<iframe src="${vidUrl}" frameborder="0" allowfullscreen></iframe>`)
