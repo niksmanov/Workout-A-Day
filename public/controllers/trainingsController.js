@@ -1,5 +1,5 @@
 import {templates} from 'templates';
-let trainingsController = function () {
+const trainingsController = function () {
 
     const trainingsRef = firebase.database().ref('Trainings/');
     let childArray = [];
