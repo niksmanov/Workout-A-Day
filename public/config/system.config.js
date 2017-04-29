@@ -1,10 +1,10 @@
 SystemJS.config({
     "transpiler": "plugin-babel",
     "map": {
-        //SystemJS files\\ 
+        //SystemJS files\\
         "plugin-babel": "../node-modules/systemjs-plugin-babel/plugin-babel.js",
         "systemjs-babel-build": "../node-modules/systemjs-plugin-babel/systemjs-babel-browser.js",
-        
+
         //App files\\
         "index": "../app-modules/index.js",
         "templates": "../app-modules/templates.js",
@@ -17,6 +17,7 @@ SystemJS.config({
         "trainingsController": "../controllers/trainingsController.js",
         "editProfileController": "../controllers/editProfileController.js",
         "changePasswordController": "../controllers/changePasswordController.js",
+        "videosController": "../controllers/videosController.js",
 
         //Libraries\\
         "jquery" : "../node-modules/jquery/dist/jquery.js",
@@ -29,7 +30,6 @@ SystemJS.config({
         //UI stuffs (autocomplete, calendar etc.)
         "jqueryUi": "../node-modules/jquery-ui-dist/jquery-ui.js",
         "bootstrap": "node-modules/bootstrap/dist/js/bootstrap.min.js"
-
     }
 });
 

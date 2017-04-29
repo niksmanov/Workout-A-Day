@@ -31,5 +31,9 @@
     "systemjs": "^0.20.12",
     "systemjs-plugin-babel": "0.0.21",
     "toastr": "^2.1.2"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^3.5.0"
   }
 }

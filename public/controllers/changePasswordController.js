@@ -23,9 +23,9 @@ const changePasswordController = function (user) {
                     const reauth = Promise.resolve(currentUser.reauthenticateWithCredential(credential));
 
                     reauth
-                        .then(() => {                            
+                        .then(() => {
                             const updated = Promise.resolve(currentUser.updatePassword(newPass));
-                            
+
                             updated
                                 .then(() => {
                                     toastr.success('You have changed your password successfully!');

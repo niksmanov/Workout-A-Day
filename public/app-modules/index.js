@@ -9,6 +9,7 @@ import {galleryController} from 'galleryController';
 import {trainingsController} from 'trainingsController';
 import {changePasswordController} from 'changePasswordController';
 import {editProfileController} from 'editProfileController';
+import {videosController} from 'videosController';
 
 let currentlyLoggedUser = firebase.auth().currentUser;
 
@@ -37,12 +38,12 @@ router
         '/register': () => registerController(),
         '/login': () => loginController(),
         '/logout': () => logoutController(),
-        '/user': () => userController(currentlyLoggedUser),        
+        '/user': () => userController(currentlyLoggedUser),
         '/changePassword': () => changePasswordController(currentlyLoggedUser),
         '/editProfile': () => editProfileController(currentlyLoggedUser),
         '/gallery': () => galleryController(),
         '/trainings': () => trainingsController(),
-        '/videos': () => templates.getPage('videos', {})
+        '/videos': () => videosController(),
     })
     .notFound(() => templates.getPage('notFound', {}))
     .resolve();
@@ -54,3 +55,5 @@ router
 // }, function (error) {
 //     console.log("Error: " + error.code);
 // });
+
+module.exports = router;

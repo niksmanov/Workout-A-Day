@@ -38,6 +38,26 @@
 /* END OF TRAININGS SECTION */
 
 /* VIDEOS SECTION */
+#video-add {
+    width: 400px;
+}
+
+#video-url {
+    width: 300px;
+}
+
+.upload {
+    border: 1px solid red;
+    background-color: grey;
+    margin-bottom: 10px;
+}
+
+#not-working { /*Quick center*/
+    margin: 0 auto;
+    text-align: center;
+}
+
+
 .beginner > .col-sm-4 > iframe {
     border: 5px solid rgba(46, 167, 44, 0.4);
 }
