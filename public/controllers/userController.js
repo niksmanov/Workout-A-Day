@@ -1,7 +1,8 @@
 import {templates} from 'templates';
 
 const userController = function (user) {
-    templates.getPage('user', user)
+    if (user) {
+        templates.getPage('user', user)
         .done(() => {
             //User profile favourites list
             let likes = localStorage.getItem('userLikes').split(',');
@@ -18,6 +19,9 @@ const userController = function (user) {
                 }
             }
         });
+    } else {
+        location.hash = '/login';
+    }
 };
 
 export {userController};
