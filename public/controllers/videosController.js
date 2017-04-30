@@ -17,13 +17,15 @@ const videosController = function () {
 
 
             $upload.click(() => {
-                const vidUrl = $('#video-url').val();
+                let vidUrl = $('#video-url').val();
                 var matches = vidUrl.match(/watch\?v=([a-zA-Z0-9\-_]+)/); //URL Validator
                 if (matches && firebase.auth().currentUser !== null) {
-                    const iFrame = $(`<iframe src="${vidUrl}" frameborder="0" allowfullscreen></iframe>`)
+                    vidUrl = vidUrl.replace('watch?v=', 'embed/');
+                    const iFrame = $(`<iframe src="${vidUrl}" frameborder="0" allowfullscreen></iframe>`);
                     // const iFrame = $('<iframe></iframe>').attr('src', $vidUrl).attr('frameborder', '0').attr('allowfullscreen');
                     // const newVideo = $('<div></div>').attr('id', `custom-video-${videoId}`).addClass('col-sm-4').append(iFrame).append('<br/>');
-                    const newVideo = $(`<div id="custom-video-${videoID}"></div`)
+                    const newVideo = $(`<div id="custom-video-${videoId}" class='col-sm-4'></div>`);
+                    newVideo.append(iFrame);
                     //Checking real time which radio button is checked
                     const $beginnerChecked = $('#beginnerDifficulty').is(':checked');
                     const $intermediateChecked = $('#intermediateDifficulty').is(':checked');
@@ -31,6 +33,8 @@ const videosController = function () {
 
 
                     if ($beginnerChecked) {
+                        alert('Adding beginner video')
+
                         $beginnerVids.append(newVideo);
                         videoId+=1;
                     } else if ($intermediateChecked) {
