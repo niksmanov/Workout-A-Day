@@ -26,7 +26,9 @@
 #userLikes > .list-group-item > a {
     color: black;
     line-height: 250%;
+    font-size: 90%;
 }
+
 /* END OF PROFILE SECTION */
 
 /* GALLERY SECTION */
@@ -39,6 +41,7 @@
 .thumbnail {
     padding: 0;
 }
+
 /* END OF GALLERY SECTION */
 
 /* TRAININGS SECTION */
@@ -72,7 +75,6 @@
     text-align: center;
 }
 
-
 .beginner > .col-sm-4 > iframe {
     border: 5px solid rgba(46, 167, 44, 0.4);
 }
@@ -88,4 +90,5 @@
 .difficultyHeader {
     clear: both;
 }
+
 /* END OF VIDEOS SECTION */
