@@ -84,4 +84,8 @@
 .advanced > .col-sm-4 > iframe {
     border: 5px solid rgba(203, 0, 0, 0.4);
 }
+
+.difficultyHeader {
+    clear: both;
+}
 /* END OF VIDEOS SECTION */
