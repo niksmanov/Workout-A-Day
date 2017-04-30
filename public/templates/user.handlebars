@@ -22,20 +22,29 @@
 
             </form>
         </div>
-        <div class="form-group col-sm-12 col-sm-offset-2">
+        <div class="form-group col-sm-10 col-sm-offset-2">
             <a href="#/editProfile" class="btn btn-sm btn-default clearfix col-sm-offset-2" id="editProfileBtn">Edit
                 profile</a>
             <a href="#/changePassword" class="btn btn-sm btn-default clearfix" id="changePasswordBtn">Change
                 password</a>
         </div>
-        <div class="col-xs-12 col-md-6 col-md-push-3 clearfix" align="center">
-            <br>
-            <h4 align="center">{{displayName}}'s favourite trainings</h4>
-            <br>
-            <div id="userLikes" class="list-group">
-                <div class="list-group-item">
+        <div class="fb-sharable">
+            
+            <article class="col-xs-12 col-md-6 col-md-push-3 clearfix" align="center">
+                
+                <br>
+                <h4 align="center">{{displayName}}'s favourite trainings</h4>
+                <br>
+                <aside class="fb-share-button" data-href="https://workout-a-day.firebaseapp.com/#/user" data-layout="button_count" data-size="small"
+                data-mobile-iframe="true">
+                <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fworkout-a-day.firebaseapp.com%2F%23%2Fuser&amp;src=sdkpreparse">Share</a>
+            </aside>
+                <div id="userLikes" class="list-group">
+                    <div class="list-group-item">
+                    </div>
                 </div>
-            </div>
+            </article>
+            
         </div>
     </div>
 </fieldset>
