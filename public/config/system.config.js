@@ -16,6 +16,7 @@ SystemJS.config({
         "galleryController": "../controllers/galleryController.js",
         "trainingsController": "../controllers/trainingsController.js",
         "editProfileController": "../controllers/editProfileController.js",
+        "changeAvatarController": "../controllers/changeAvatarController.js",
         "changePasswordController": "../controllers/changePasswordController.js",
         "videosController": "../controllers/videosController.js",
 
