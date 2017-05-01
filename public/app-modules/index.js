@@ -8,6 +8,7 @@ import {homeController} from 'homeController';
 import {galleryController} from 'galleryController';
 import {trainingsController} from 'trainingsController';
 import {changePasswordController} from 'changePasswordController';
+import {changeAvatarController} from 'changeAvatarController';
 import {editProfileController} from 'editProfileController';
 import {videosController} from 'videosController';
 
@@ -40,6 +41,7 @@ router
         '/logout': () => logoutController(),
         '/user': () => userController(currentlyLoggedUser),
         '/changePassword': () => changePasswordController(currentlyLoggedUser),
+        '/changeAvatar': () => changeAvatarController(currentlyLoggedUser),
         '/editProfile': () => editProfileController(currentlyLoggedUser),
         '/gallery': () => galleryController(),
         '/trainings': () => trainingsController(),
