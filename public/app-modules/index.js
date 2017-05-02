@@ -1,4 +1,3 @@
-import 'jquery';
 import {templates} from 'templates';
 import {registerController} from 'registerController';
 import {loginController} from 'loginController';
