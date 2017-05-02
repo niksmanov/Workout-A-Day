@@ -21,15 +21,18 @@ const editProfileController = function (user) {
                 const userRequester = new UserRequester();
 
                 if (username !== user.displayName) {
-                    const hasValidCharacters = username.test(/[a-zA-Z0-9]+ ?/g);
-                    if (!hasValidCharacters) {
-                        toatr.error('The username can contain only characters, digits and space');
+                    const regex = /[^a-zA-Z0-9 ]+/g;
+                    const hasInvalidCharacters = regex.test(username);
+                    if (hasInvalidCharacters) {
+                        toastr.error('The username can contain only characters, digits and space');
+                        $('#usernameChangeInput').focus();
                         return;
                     }
 
                     const isValidUsername = USERNAME_MIN_LENGTH < username.length && username.length < USERNAME_MAX_LENGTH;
                     if (!isValidUsername) {
                         toastr.error(`The username should be between ${USERNAME_MIN_LENGTH} and ${USERNAME_MAX_LENGTH} characters long!`);
+                        $('#usernameChangeInput').focus();
                         return;
                     }
 
