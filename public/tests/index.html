@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Workout A Day Tests</title>
     <link rel="shortcut icon" type="image/png" href="../images/icons/favicon.png"/>
-    <link rel="stylesheet" href="../node-modules/mocha/mocha.css" />
+    <link rel="stylesheet" href="../node-modules/mocha/mocha.css"/>
 </head>
 <body>
 <div id="mocha"></div>
@@ -24,33 +24,11 @@
 <script src="../node-modules/handlebars/dist/handlebars.js"></script>
 <script src="../node-modules/jquery-ui-dist/jquery-ui.js"></script>
 
-<!--App Controllers-->
-<script src="../controllers/registerController.js"></script>
-<!--<script src="../controllers/loginController.js"></script>-->
-<!--<script src="../controllers/logoutController.js"></script>-->
-<!--<script src="../controllers/userController.js"></script>-->
-<!--<script src="../controllers/homeController.js"></script>-->
-<!--<script src="../controllers/galleryController.js"></script>-->
-<!--<script src="../controllers/trainingsController.js"></script>-->
-<!--<script src="../controllers/editProfileController.js"></script>-->
-<!--<script src="../controllers/changeAvatarController.js"></script>-->
-<!--<script src="../controllers/changePasswordController.js"></script>-->
-<!--<script src="../controllers/videosController.js"></script>-->
-<!--<script src="../requesters/userRequester.js"></script>-->
-
-<!--Unit Tests-->
+<!--App (add every testing file in system.config map)-->
 <script>
-    mocha.setup('bdd');
-    const {expect} = chai;
+    SystemJS.import('registerControllerTests');
 </script>
 
-<!--Add every controllerTest file in system.config.js map!!!-->
-<script src="controllersTests/registerControllerTests.js"></script>
-
-
-<script>
-    mocha.run();
-</script>
 
 </body>
 </html>
