@@ -19,17 +19,12 @@ let currentlyLoggedUser = userRequester.currentUser;
 
 userRequester.onAuthStateChanged(function (user) {
     if (user) {
-        // User is signed in.
         currentlyLoggedUser = user;
 
         $('#loginBtn').addClass('hidden');
         $('#registerBtn').addClass('hidden');
         $('#currentUser').removeClass('hidden').text(`Hello, ${currentlyLoggedUser.displayName}`);
         $('#logoutBtn').removeClass('hidden').on('click', () => logoutController(currentlyLoggedUser));
-        // ...
-    } else {
-        // User is signed out.
-        // ...
     }
 });
 
@@ -52,11 +47,3 @@ router
     })
     .notFound(() => templates.getPage('notFound', {}))
     .resolve();
-
-// const ref = firebase.database().ref();
-
-// ref.on("value", function(snapshot) {
-//     console.log(snapshot.val());
-// }, function (error) {
-//     console.log("Error: " + error.code);
-// });
