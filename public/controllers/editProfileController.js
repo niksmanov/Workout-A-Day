@@ -7,6 +7,10 @@ const editProfileController = function (user) {
         .done(() => {
             const $editBtn = $('#editBtn');
 
+            $('#emailChangeInput').on('change', () => {
+                $('#passwordInput').prop('disabled', false).focus();
+            });
+
             $editBtn.on('click', () => {
                 const username = $('#usernameChangeInput').val();
                 const email = $('#emailChangeInput').val();
