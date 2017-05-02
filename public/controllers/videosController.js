@@ -1,4 +1,5 @@
 import {templates} from 'templates';
+import {UserRequester} from 'userRequester';
 
 const videosController = function () {
     templates.getPage('videos', {})
@@ -8,18 +9,14 @@ const videosController = function () {
             const $intermediateVids = $('.intermediate');
             const $advancedVids = $('.advanced');
 
-            let videoId = 0; //I will use this to add removal later
-
-            if (firebase.auth().currentUser !== null) {
-                const currentUser = firebase.auth().currentUser.displayName;
-            }
-
-
+            let videoId = 0; //I will use this to add removal later            
+            const userRequester = new UserRequester();
+            const currentUser = userRequester.currentUser;
 
             $upload.click(() => {
                 let vidUrl = $('#video-url').val();
                 var matches = vidUrl.match(/watch\?v=([a-zA-Z0-9\-_]+)/); //URL Validator
-                if (matches && firebase.auth().currentUser !== null) {
+                if (matches && currentUser !== null) {
                     vidUrl = vidUrl.replace('watch?v=', 'embed/');
                     const iFrame = $(`<iframe src="${vidUrl}" frameborder="0" allowfullscreen></iframe>`);
                     // const iFrame = $('<iframe></iframe>').attr('src', $vidUrl).attr('frameborder', '0').attr('allowfullscreen');

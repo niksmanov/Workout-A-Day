@@ -11,10 +11,13 @@ import {changePasswordController} from 'changePasswordController';
 import {changeAvatarController} from 'changeAvatarController';
 import {editProfileController} from 'editProfileController';
 import {videosController} from 'videosController';
+import {UserRequester} from 'userRequester';
 
-let currentlyLoggedUser = firebase.auth().currentUser;
+const userRequester = new UserRequester();
 
-firebase.auth().onAuthStateChanged(function (user) {
+let currentlyLoggedUser = userRequester.currentUser;
+
+userRequester.onAuthStateChanged(function (user) {
     if (user) {
         // User is signed in.
         currentlyLoggedUser = user;
