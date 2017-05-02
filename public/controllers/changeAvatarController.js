@@ -11,8 +11,8 @@ const changeAvatarController = function (user) {
                     const newAvatar = input.files[0];
                     const extension = input.value.split('.').pop();
 
-                    const acceptedExtensions = ['.jpg', '.jpeg', '.png'];
-                    if (acceptedExtensions.indexOf(extension.toLowerCase() < 0)) {
+                    const acceptedExtensions = ['jpg', 'jpeg', 'png'];
+                    if (acceptedExtensions.indexOf(extension.toLowerCase()) < 0) {
                         toastr.error('The accespted file formats are .jpeg and .png!');
                         return;
                     }
