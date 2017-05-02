@@ -15,7 +15,6 @@ const trainingsController = function () {
             childArray.push(child);
 
             let exercises = child.exercises;
-
             for (let workout of exercises) {
                 imageId += 1;
                 workout['imgSrc'] = `../images/trainings/${imageId}.jpg`;
