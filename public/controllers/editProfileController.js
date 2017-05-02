@@ -2,6 +2,9 @@ import { templates } from 'templates';
 import { userController } from 'userController';
 import { UserRequester } from 'userRequester';
 
+const USERNAME_MIN_LENGTH = 2;
+const USERNAME_MAX_LENGTH = 20;
+
 const editProfileController = function (user) {
     templates.getPage('editProfile', user)
         .done(() => {
@@ -12,12 +15,24 @@ const editProfileController = function (user) {
             });
 
             $editBtn.on('click', () => {
-                const username = $('#usernameChangeInput').val();
+                const username = $('#usernameChangeInput').val(); 
                 const email = $('#emailChangeInput').val();
                 const password = $('#passwordInput').val();
                 const userRequester = new UserRequester();
 
-                if (username.trim() !== '' && username !== user.displayName) {
+                if (username !== user.displayName) {
+                    const hasValidCharacters = username.test(/[a-zA-Z0-9]+ ?/g);
+                    if (!hasValidCharacters) {
+                        toatr.error('The username can contain only characters, digits and space');
+                        return;
+                    }
+
+                    const isValidUsername = USERNAME_MIN_LENGTH < username.length && username.length < USERNAME_MAX_LENGTH;
+                    if (!isValidUsername) {
+                        toastr.error(`The username should be between ${USERNAME_MIN_LENGTH} and ${USERNAME_MAX_LENGTH} characters long!`);
+                        return;
+                    }
+
                     const update = userRequester.currentUser.updateProfile({ displayName: username });
                     toastr.success(`Your username is now ${username}`);  
 
