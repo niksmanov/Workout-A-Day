@@ -1,14 +1,17 @@
 import {templates} from 'templates';
+import {UserRequester} from 'userRequester';
 
 const videosController = function() { //
     templates.getPage('videos', {}).done(() => {
-
-        firebase.auth().onAuthStateChanged(function(user) {
+        const userRequester = new UserRequester();
+        const currentUser = userRequester.currentUser;
+        userRequester.onAuthStateChanged(function(user) {
             if (user) {
                 const $upload = $('#video-add');
                 const $divBeginner = $('.beginner');
                 const $divIntermediate = $('.intermediate');
                 const $divAdvanced = $('.advanced');
+
 
                 let beginnerVideos = '';
                 let intermediateVideos = '';
@@ -19,33 +22,31 @@ const videosController = function() { //
                         let visualizeBeginnerVideos = localStorage.getItem('beginner');
                         visualizeBeginnerVideos = visualizeBeginnerVideos.substring(0, visualizeBeginnerVideos.length - 1).split(',');
                         for (var vid of visualizeBeginnerVideos) {
-                                $divBeginner.append(vid);
+                            $divBeginner.append(vid);
                         }
                     }
                 };
-
+                addBeginnerVideos();
                 const addIntermediateVideos = function() {
                     if (localStorage.getItem('intermediate')) {
                         let visualizeIntermediateVideos = localStorage.getItem('intermediate');
                         visualizeIntermediateVideos = visualizeIntermediateVideos.substring(0, visualizeIntermediateVideos.length - 1).split(',');
                         for (var vid of visualizeIntermediateVideos) {
-                                $divIntermediate.append(vid);
+                            $divIntermediate.append(vid);
                         }
                     }
                 };
-
+                addIntermediateVideos();
                 const addAdvancedVideos = function() {
                     if (localStorage.getItem('advanced')) {
                         let visualizeAdvancedVideos = localStorage.getItem('advanced');
                         visualizeAdvancedVideos = visualizeAdvancedVideos.substring(0, visualizeAdvancedVideos.length - 1).split(',');
                         for (var vid of visualizeAdvancedVideos) {
-                                $divAdvanced.append(vid);
+                            $divAdvanced.append(vid);
                         }
                     }
                 };
-
-                const currentUser = firebase.auth().currentUser.displayName;
-
+                addAdvancedVideos();
                 $upload.click(() => {
                     let vidUrl = $('#video-url').val();
                     var matches = vidUrl.match(/watch\?v=([a-zA-Z0-9\-_]+)/); //URL Validator

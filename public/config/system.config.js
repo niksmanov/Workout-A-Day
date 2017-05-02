@@ -19,6 +19,7 @@ SystemJS.config({
         "changeAvatarController": "../controllers/changeAvatarController.js",
         "changePasswordController": "../controllers/changePasswordController.js",
         "videosController": "../controllers/videosController.js",
+        "userRequester": "../requesters/userRequester.js",
 
         //Libraries\\
         "jquery" : "../node-modules/jquery/dist/jquery.js",

@@ -1,4 +1,5 @@
 import { templates } from 'templates';
+import { UserRequester } from 'userRequester';
 
 const changePasswordController = function (user) {
     templates.getPage('changePassword', user)
@@ -17,7 +18,8 @@ const changePasswordController = function (user) {
                 } else if (newPass.trim() === '') {
                     toastr.error('The new password cannot be empty!');
                 } else {
-                    const currentUser = firebase.auth().currentUser;
+                    const userRequester = new UserRequester();
+                    const currentUser = userRequester.currentUser;
                     const credential = firebase.auth.EmailAuthProvider.credential(user.email, $currentPass.val());
 
                     const reauth = Promise.resolve(currentUser.reauthenticateWithCredential(credential));

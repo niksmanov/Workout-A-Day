@@ -1,4 +1,5 @@
 import { templates } from 'templates';
+import { UserRequester } from 'userRequester';
 
 const loginController = function (user) {
     templates.getPage('login', {})
@@ -10,7 +11,8 @@ const loginController = function (user) {
 
         $loginBtn.on('click', () => {
             if($email.val() && $pass.val()){
-                const user = Promise.resolve(firebase.auth().signInWithEmailAndPassword($email.val(), $pass.val()));
+                const userRequester = new UserRequester();
+                const user = Promise.resolve(userRequester.signInWithEmailAndPassword($email.val(), $pass.val()));
                    
                 user
                     .then((usr) => {

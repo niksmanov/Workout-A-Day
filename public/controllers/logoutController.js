@@ -1,6 +1,10 @@
+import {UserRequester} from 'userRequester';
+
 const logoutController = function (user) {
     if (user) {
-        firebase.auth().signOut()
+        const userRequester = new UserRequester();
+        
+        userRequester.signOut()
             .then(function () {
                 $('#currentUser').addClass('hidden').text(``);
                 $('#logoutBtn').addClass('hidden');

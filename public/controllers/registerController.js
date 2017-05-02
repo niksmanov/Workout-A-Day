@@ -1,4 +1,5 @@
 import { templates } from 'templates';
+import { UserRequester } from 'userRequester';
 
 const registerController = function () {
     templates.getPage('register', {})
@@ -11,8 +12,9 @@ const registerController = function () {
 
         $registerBtn.on('click', () => {
             if($email.val() && $pass.val()){
+                const userRequester = new UserRequester();
 
-                const user = firebase.auth().createUserWithEmailAndPassword($email.val(), $pass.val())
+                const user = userRequester.createUserWithEmailAndPassword($email.val(), $pass.val())
                     .catch(function(error) {
                         const errorCode = error.code;
                         const errorMessage = error.message;
@@ -21,7 +23,7 @@ const registerController = function () {
                     });
 
                 user.then((usr) => {
-                    firebase.auth().currentUser.updateProfile({ 
+                    userRequester.currentUser.updateProfile({ 
                         displayName: $username.val(),
                         photoURL: "images/default-user.jpg"
                     })

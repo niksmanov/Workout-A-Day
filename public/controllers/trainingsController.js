@@ -1,4 +1,6 @@
 import {templates} from 'templates';
+import {UserRequester} from 'userRequester';
+
 const trainingsController = function () {
 
     const trainingsRef = firebase.database().ref('Trainings/');
@@ -47,7 +49,9 @@ const trainingsController = function () {
                     }
                 }
 
-                firebase.auth().onAuthStateChanged(function (user) {
+                const userRequester = new UserRequester();
+
+                userRequester.onAuthStateChanged(function (user) {
                     if (user) {
 
                         let $allLikeButtons = $('.star');
