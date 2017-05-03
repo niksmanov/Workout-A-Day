@@ -12,6 +12,9 @@ const videosController = function() { //
                 const $divIntermediate = $('.intermediate');
                 const $divAdvanced = $('.advanced');
 
+                const $clearBeginner = $('#clearBeginner');
+                const $clearIntermediate = $('#clearIntermediate');
+                const $clearAdvanced = $("#clearAdvanced");
 
                 let beginnerVideos = '';
                 let intermediateVideos = '';
@@ -75,6 +78,22 @@ const videosController = function() { //
                     } else { //todo: seperate those errors:
                         toastr.error('You are either not logged in or the video URL you have entered is invalid. Please try again!', "Invalid Video URL or not logged in!");
                     };
+                });
+
+                $clearBeginner.click(() => {
+                    localStorage.removeItem('beginner');
+                    addBeginnerVideos();
+                    location.reload();
+                });
+                $clearIntermediate.click(() => {
+                    localStorage.removeItem('intermediate');
+                    addIntermediateVideos();
+                    location.reload();
+                });
+                $clearAdvanced.click(() => {
+                    localStorage.removeItem('advanced');
+                    addAdvancedVideos();
+                    location.reload();
                 });
             } else {
                 const $upload = $('#video-add');

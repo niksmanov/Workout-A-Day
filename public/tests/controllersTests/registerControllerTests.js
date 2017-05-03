@@ -1,6 +1,5 @@
 import {templates} from 'templates';
 import {UserRequester} from 'userRequester';
-
 mocha.setup('bdd');
 const expect = chai.expect;
 

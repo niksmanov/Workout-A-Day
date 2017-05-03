@@ -91,4 +91,19 @@
     clear: both;
 }
 
+h5 > strong {
+    float: left;
+    margin-left: 10%;
+}
+
+h5 > button {
+    float: right;
+    margin-right: 10%;
+}
+
+h5 {
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
 /* END OF VIDEOS SECTION */
