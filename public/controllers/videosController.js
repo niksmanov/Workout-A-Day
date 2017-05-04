@@ -76,17 +76,25 @@ const videosController = function() { //
 
                         //Adds the video
                         if ($beginnerChecked) {
-                            beginnerVideos += (newVideo + ','); //Adds the new video and a seperator
-                            localStorage.setItem('beginner', beginnerVideos); //Puts the video collection in local storage
+                            if (localStorage.getItem('beginner')) {
+                                localStorage.setItem('beginner', localStorage.getItem('beginner') + newVideo);
+                            } else {
+                                localStorage.setItem('beginner', newVideo);
+                            }
                             location.reload();  // Refreshes the page so the function which appends the videos is called.
-
                         } else if ($intermediateChecked) {
-                            intermediateVideos += newVideo + ',';
-                            localStorage.setItem('intermediate', intermediateVideos);
+                            if (localStorage.getItem('intermediate')) {
+                                localStorage.setItem('intermediate', localStorage.getItem('intermediate') + newVideo);
+                            } else {
+                                localStorage.setItem('intermediate', newVideo);
+                            }
                             location.reload();
                         } else if ($advancedChecked) {
-                            advancedVideos += newVideo + ',';
-                            localStorage.setItem('advanced', advancedVideos);
+                            if (localStorage.getItem('advanced')) {
+                                localStorage.setItem('advanced', localStorage.getItem('advanced') + newVideo);
+                            } else {
+                                localStorage.setItem('advanced', newVideo);
+                            }
                             location.reload();
                         };
                     } else {
