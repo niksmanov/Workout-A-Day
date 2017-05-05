@@ -11,12 +11,13 @@ import {changeAvatarController} from 'changeAvatarController';
 import {editProfileController} from 'editProfileController';
 import {videosController} from 'videosController';
 import {UserRequester} from 'userRequester';
+// import {router} from 'index';
 
 mocha.setup('bdd');
 const expect = chai.expect;
 
 describe('Index file tests', () => {
-    it('It works for index', () => {
+    it('Expect router to call loginController when location hash is /login', () => {
         const loginControllerMock = sinon.spy(loginController);
 
         location.hash = '/login';
@@ -26,5 +27,3 @@ describe('Index file tests', () => {
         loginControllerMock.restore();
     });
 });
-
-// mocha.run();
