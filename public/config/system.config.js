@@ -23,7 +23,7 @@ SystemJS.config({
 
         //App Tests files\\
         "registerControllerTests": "../tests/controllersTests/registerControllerTests.js",
-
+        "userControllerTests": "../tests/controllersTests/userControllerTests.js",
 
         //Libraries\\
         "jquery" : "../node-modules/jquery/dist/jquery.js",
