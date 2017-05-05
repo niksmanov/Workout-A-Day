@@ -24,4 +24,4 @@ describe('User controller tests', () => {
     });
 });
 
-mocha.run();
+// mocha.run();
