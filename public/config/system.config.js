@@ -25,6 +25,7 @@ SystemJS.config({
         "registerControllerTests": "../tests/controllersTests/registerControllerTests.js",
         "userControllerTests": "../tests/controllersTests/userControllerTests.js",
         "indexTests": "../tests/appTests/indexTests.js",
+        "templatesTests": "../tests/appTests/templatesTests.js",
 
         //Libraries\\
         "jquery" : "../node-modules/jquery/dist/jquery.js",
