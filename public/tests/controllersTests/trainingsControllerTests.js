@@ -12,13 +12,13 @@ describe('Trainings controller tests', () => {
         expect(controller).to.exist;
     });
 
-    it('Trainings controller should be a function', () => {
+    it('Expect trainings controller to be a function', () => {
         let controller = trainingsController;
         expect(controller).to.be.a('function');
     });
 
 
-    it('Expect trainings controller to check if use is logged in', () => {
+    it('Expect trainings controller to check if user is logged in', () => {
         let user = UserRequester.currentUser;
         if (user) {
             trainingsController(user);

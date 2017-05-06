@@ -7,13 +7,13 @@ const expect = chai.expect;
 
 describe('Register controller tests', () => {
 
-    it('Expect register controllerto exist', () => {
+    it('Expect register controller to exist', () => {
         let controller = registerController;
         expect(controller).to.exist;
     });
 
 
-    it('Register controller should be a function', () => {
+    it('Expect register controller to be a function', () => {
         let controller = registerController;
         expect(controller).to.be.a('function');
     });
@@ -26,7 +26,7 @@ describe('Register controller tests', () => {
         }
     });
 
-    it('Expect register controller to reload the page if registration was successful and to be a function', () => {
+    it('Expect register controller to reload the page if registration is a function and was successful', () => {
         let user = UserRequester.currentUser;
         if (user) {
             registerController(user);
