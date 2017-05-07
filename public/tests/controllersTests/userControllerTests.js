@@ -8,11 +8,13 @@ const expect = chai.expect;
 describe('User controller tests', () => {
 
     it('Expect userController.js to exist', () => {
-        expect(userController).to.exist;
+        let controller = userController;
+        expect(controller).to.exist;
     });
 
     it('Expect userController.js to be a function', function () {
-        expect(userController).to.be.a('function');
+        let controller = userController;
+        expect(controller).to.be.a('function');
     });
 
     it('Expect userController to redirect to login if there is no user.', function () {

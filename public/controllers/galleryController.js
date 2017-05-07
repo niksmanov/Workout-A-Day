@@ -5,7 +5,7 @@ const galleryController = function () {
     templates.getPage('gallery', {})
         .done(() => {
             jQuery(document).ready(function($) {
-                
+
                 $('#myCarousel').carousel({
                     interval: 5000
                 });

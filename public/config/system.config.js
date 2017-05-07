@@ -25,8 +25,12 @@ SystemJS.config({
         "registerControllerTests": "../tests/controllersTests/registerControllerTests.js",
         "userControllerTests": "../tests/controllersTests/userControllerTests.js",
         "trainingsControllerTests": "../tests/controllersTests/trainingsControllerTests.js",
+        "videosControllerTests": "../tests/controllersTests/videosControllerTests.js",
+        "changeAvatarTests": "../tests/controllersTests/changeAvatarTests.js",
         "indexTests": "../tests/appTests/indexTests.js",
         "templatesTests": "../tests/appTests/templatesTests.js",
+
+
 
         //Libraries\\
         "jquery": "../node-modules/jquery/dist/jquery.js",
