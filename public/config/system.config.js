@@ -26,7 +26,8 @@ SystemJS.config({
         "userControllerTests": "../tests/controllersTests/userControllerTests.js",
         "trainingsControllerTests": "../tests/controllersTests/trainingsControllerTests.js",
         "videosControllerTests": "../tests/controllersTests/videosControllerTests.js",
-        "changeAvatarTests": "../tests/controllersTests/changeAvatarTests.js",
+        "changeAvatarControllerTests": "../tests/controllersTests/changeAvatarControllerTests.js",
+        "changePasswordControllerTests" : "../tests/controllersTests/changePasswordControllerTests.js",
         "indexTests": "../tests/appTests/indexTests.js",
         "templatesTests": "../tests/appTests/templatesTests.js",
 
