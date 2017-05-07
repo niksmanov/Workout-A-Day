@@ -30,7 +30,7 @@ SystemJS.config({
         "changePasswordControllerTests" : "../tests/controllersTests/changePasswordControllerTests.js",
         "indexTests": "../tests/appTests/indexTests.js",
         "templatesTests": "../tests/appTests/templatesTests.js",
-
+        "loginControllerTests": "../tests/controllersTests/loginControllerTests.js",
 
 
         //Libraries\\
