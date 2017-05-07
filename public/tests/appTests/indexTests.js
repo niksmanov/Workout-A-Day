@@ -13,17 +13,17 @@ import {videosController} from 'videosController';
 import {UserRequester} from 'userRequester';
 // import {router} from 'index';
 
-mocha.setup('bdd');
-const expect = chai.expect;
+// mocha.setup('bdd');
+// const expect = chai.expect;
 
-describe('Index file tests', () => {
-    it('Expect router to call loginController when location hash is /login', () => {
-        const loginControllerMock = sinon.spy(loginController);
+// describe('Index file tests', () => {
+//     it('Expect router to call loginController when location hash is /login', () => {
+//         const loginControllerMock = sinon.spy(UserRequester, 'onAuthStateChanged');
 
-        location.hash = '/login';
+//         location.hash = '/home';
 
-        expect(loginControllerMock).to.have.been.calledOnce;
+//         expect(loginControllerMock).to.have.been.calledOnce;
 
-        loginControllerMock.restore();
-    });
-});
+//         loginControllerMock.restore();
+//     });
+// });
