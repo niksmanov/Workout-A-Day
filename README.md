@@ -9,3 +9,5 @@
 3. Simeon Nakov - [_simzzz_](https://github.com/simzzz) 
 
 **Website of the application:** [HERE](https://workout-a-day.firebaseapp.com)
+
+**Video of the application:** [HERE](https://youtu.be/MW8mt46KTQ0)
